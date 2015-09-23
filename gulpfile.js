@@ -1,8 +1,9 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
+var gutil = require('gulp-util');
 var eslint = require('gulp-eslint');
 var watch = require('gulp-watch');
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
 var KarmaServer = require('karma').Server;
 
 gulp.task('test', ['lint'], function (done) {
@@ -24,11 +25,24 @@ gulp.task('lint', function () {
     .pipe(eslint.format());
 });
 
-gulp.task('package', function () {
-  return gulp.src('./src/**/*.js')
-    .pipe(babel())
-    .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('./dist'));
+gulp.task('webpack', ['lint'], function(callback) {
+    webpack(require('./webpack.config.js'), function(err, stats) {
+        if(err) throw new gutil.PluginError('webpack', err);
+        gutil.log('[webpack]', stats.toString({
+        }));
+        callback();
+    });
+});
+
+gulp.task('webpack-dev-server', function(callback) {
+    var myConfig = Object.create(require('./webpack.config.js'));
+
+    new WebpackDevServer(webpack(myConfig), {
+    }).listen(8080, 'localhost', function(err) {
+        if(err) throw new gutil.PluginError('webpack-dev-server', err);
+        gutil.log('[webpack-dev-server]', 'http://localhost:8080/webpack-dev-server/index.html');
+    });
 });
 
 gulp.task('default', ['test']);
+gulp.task('package', ['webpack']);
