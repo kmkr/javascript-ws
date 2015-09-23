@@ -20,6 +20,7 @@
   - Gulp / Grunt
   - Karma + Jasmine
   - ESLint
+  - Webpack
 
 - Rammeverk
   - AngularJS
