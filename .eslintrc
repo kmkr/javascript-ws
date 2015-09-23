@@ -1,7 +1,11 @@
+// http://eslint.org/docs/user-guide/configuring
 {
-    "rules": {
-        "eqeqeq": 2,
-        "curly": 2,
-        "quotes": [2, "single"]
-    }
+  "ecmaFeatures": {
+    "classes": true
+  },
+  "rules": {
+    "eqeqeq": 2,
+    "curly": 2,
+    "quotes": [2, "single"]
+  }
 }
