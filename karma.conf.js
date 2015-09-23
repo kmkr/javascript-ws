@@ -1,10 +1,25 @@
 module.exports = function(config) {
   config.set({
-    basePath: './src',
+    basePath: './',
     files: [
-      '**/*.js'
+      'src/**/*.js'
     ],
     frameworks: ['jasmine'],
-    browsers: ['PhantomJS', 'Firefox']
+    browsers: ['PhantomJS', 'Firefox'],
+
+    preprocessors: {
+      'src/**/*.js': ['babel']
+    },
+    babelPreprocessor: {
+      options: {
+          sourceMap: 'inline'
+      },
+      filename: function (file) {
+          return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+          return file.originalPath;
+      }
+    }
   });
 };

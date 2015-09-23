@@ -6,27 +6,29 @@ var watch = require('gulp-watch');
 var KarmaServer = require('karma').Server;
 
 gulp.task('test', ['lint'], function (done) {
-    new KarmaServer({
-      configFile: __dirname + '/karma.conf.js',
-      autoWatch: true
-    }, function () {
-      done();
-    }).start();
+  return new KarmaServer({
+    configFile: __dirname + '/karma.conf.js',
+    autoWatch: true
+  }, function () {
+    done();
+  }).start();
+});
+
+gulp.task('watch', function () {
+  gulp.watch('./src/**/*.js', ['lint']);
 });
 
 gulp.task('lint', function () {
-    return gulp.src('./src/**/*.js')
-        .pipe(eslint())
-        .pipe(eslint.format());
-});
-
-gulp.task('default', ['test'], function () {
-    return gulp.watch('./src/**/*.js', ['lint']);
+  return gulp.src('./src/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 
 gulp.task('package', function () {
-    return gulp.src('./src/**/*.js')
-        .pipe(babel())
-        .pipe(concat('bundle.js'))
-        .pipe(gulp.dest('./dist'));
+  return gulp.src('./src/**/*.js')
+    .pipe(babel())
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('default', ['test']);
