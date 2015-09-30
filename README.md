@@ -176,13 +176,14 @@ Tjenesten kan være et objekt og arrayet med bøker kan være en liste med strin
 
 ### Ekstra utfordringer
 
-4. Skriv tjenesten der funksjonene ligger på prototypen til funksjonen `Library`
-5. Skriv tester til tjenesten ved bruk av NodeJS, gulp, Webpack og karma
+4. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
+5. Skriv tjenesten der funksjonene ligger på prototypen til funksjonen `Library`
 
-Last ned NodeJS (https://nodejs.org)
-Kjør `git clone https://github.com/kmkr/javascript-ws` via terminal/cmd
-Åpne mappa (ved å kjøre `cd javascript-ws`)
-Kjør `git checkout webpack` for å starte med Webpack-oppsett
-Kjør `npm install -g gulp`
-Kjør `npm install`
-Kjør `gulp webpack-dev-server`
+#### Start node, gulp og karma
+
+- Last ned og installer node-js (https://nodejs.org)
+- Kjør `git clone https://github.com/kmkr/javascript-ws` via terminal/cmd
+- Åpne mappa (ved å kjøre `cd javascript-ws`)
+- Kjør `npm install -g gulp`
+- Kjør `npm install`
+- Kjør `gulp test`
