@@ -1,15 +1,30 @@
-Agenda
 
-- Historikk
+
+
+
+
+# Agenda
+
+- Hva er JavaScript?
+
 - Typer
+
 - Operatorer
+
 - Statements
+
 - Funksjoner
+
 - Loops
+
 - Scope
+
 - Prototyper
+
 - Struktur
+
 - Verktøy
+
 
 
 
@@ -53,6 +68,7 @@ Agenda
 - NaN
 
 * Truthy/Falsy
+* typeof
 
 
 
@@ -69,6 +85,7 @@ Agenda
 
 # Operators
 
+- =
 - ==
 - !=
 - ===
@@ -77,6 +94,8 @@ Agenda
 - || (default values)
 - !
 - !!
+- delete
+* Array
 
 
 
@@ -114,6 +133,10 @@ Agenda
 * arguments
 
 # Loops
+
+- for
+- while
+- .forEach()
 
 # Scope
 
