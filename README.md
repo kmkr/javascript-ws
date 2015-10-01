@@ -166,7 +166,7 @@
 
 ## Bibliotek / library
 
-Lag en JavaScript-komponent/tjeneste `Library`. Komponenten skal ha et array med bøker og tilby følgende API:
+Lag en JavaScript-komponent `Library` med filnavn `library.js`. Komponenten skal ha et array med bøker og tilby følgende API:
 
 1. `lendBook(book)` el. `borrowBook(book)` låner ut en bok med navn 'X'. Kast exception dersom boka ikke er tilgjengelig. Marker boka som utlånt. Returverdi: book
 2. `returnBook(book)` gir tilbake en bok. Marker boka som tilgjengelig.
@@ -174,10 +174,13 @@ Lag en JavaScript-komponent/tjeneste `Library`. Komponenten skal ha et array med
 
 Tjenesten kan være et objekt og arrayet med bøker kan være en liste med strings eller med objekter som har properties "id" og "name".
 
+Bruk gjerne https://jsbin.com/?js,console til å skrive.
+
 ### Ekstra utfordringer
 
 4. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
-5. Skriv tjenesten der funksjonene ligger på prototypen til funksjonen `Library`
+5. ECMAScript 6 med moduler:
+  Flytt arrayet med bøker til en egen komponent `LibraryStore` i ny fil `library-store.js`, og bruk `import` i `library.js` til å benytte den fila i stedet. Bestem API til `LibraryStore` selv. Bruk `webpack`-branch for å få støtte for ES6-moduler.
 
 #### Start node, gulp og karma
 
