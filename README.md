@@ -5,17 +5,15 @@
 
 # Agenda
 
-- Hva er JavaScript?
+- JavaScript? ECMAScript? JScript? 
 
 - Typer
 
 - Operatorer
 
-- Statements
+- Statements og loops
 
 - Funksjoner
-
-- Loops
 
 - Scope
 
@@ -96,7 +94,7 @@
 - !
 - !!
 - delete
-* Array
+* Array, fjerner ikke men lager hull
 
 
 
@@ -105,8 +103,11 @@
 
 
 
-# Statements
+# Statements og loops
 
+- for
+- while
+- .forEach()
 - if
 - switch
 - break
@@ -132,12 +133,6 @@
 * argumenter - for få/for mange
 * closures - childfunksjon har tilgang på parents scope selv etter parent har returnert
 * arguments
-
-# Loops
-
-- for
-- while
-- .forEach()
 
 # Scope
 
