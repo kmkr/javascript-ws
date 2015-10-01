@@ -174,11 +174,13 @@ Lag en JavaScript-komponent `Library` med filnavn `library.js`. Komponenten skal
 
 Tjenesten kan være et objekt og arrayet med bøker kan være en liste med strings eller med objekter som har properties "id" og "name".
 
+Bruk gjerne https://jsbin.com/?js,console til å skrive.
+
 ### Ekstra utfordringer
 
 4. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
 5. ECMAScript 6 med moduler:
-  Flytt array med bøker til en egen komponent `LibraryStore` i ny fil `library-store.js`, og bruk `import` i `library.js` til å benytte den fila i stedet. Bestem API til `LibraryStore` selv. Bruk `webpack`-branch for å få støtte for ES6-moduler.
+  Flytt arrayet med bøker til en egen komponent `LibraryStore` i ny fil `library-store.js`, og bruk `import` i `library.js` til å benytte den fila i stedet. Bestem API til `LibraryStore` selv. Bruk `webpack`-branch for å få støtte for ES6-moduler.
 
 #### Start node, gulp og karma
 
