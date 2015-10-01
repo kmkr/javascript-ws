@@ -2,7 +2,8 @@ module.exports = function(config) {
   config.set({
     basePath: './',
     files: [
-      'src/**/*.js'
+      'src/**/*.js',
+      'src/**/*_test.js'
     ],
     frameworks: ['jasmine'],
     browsers: ['PhantomJS', 'Firefox'],
