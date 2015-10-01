@@ -5,7 +5,7 @@ var eslint = require('gulp-eslint');
 var watch = require('gulp-watch');
 var KarmaServer = require('karma').Server;
 
-gulp.task('test', ['lint'], function (done) {
+gulp.task('test', ['continuous-lint'], function (done) {
   return new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
     autoWatch: true
@@ -14,7 +14,7 @@ gulp.task('test', ['lint'], function (done) {
   }).start();
 });
 
-gulp.task('watch', function () {
+gulp.task('continuous-lint', function () {
   gulp.watch('./src/**/*.js', ['lint']);
 });
 
