@@ -5,7 +5,8 @@ module.exports = function(config) {
       'src/**/*_test.js',
     ],
     frameworks: ['jasmine'],
-    browsers: ['PhantomJS', 'Firefox'],
+    browsers: ['PhantomJS'],
+    //browsers: ['PhantomJS', 'Firefox'],
 
     preprocessors: {
       'src/**/*_test.js': ['webpack']

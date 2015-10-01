@@ -1,5 +1,7 @@
+import Library from './library';
+
 describe('Library', function () {
   it('should be available', function () {
-    expect(Library).toBeDefined();
+    expect(new Library()).toBeDefined();
   });
 });

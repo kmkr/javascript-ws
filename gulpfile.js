@@ -1,12 +1,11 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var eslint = require('gulp-eslint');
-var watch = require('gulp-watch');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var KarmaServer = require('karma').Server;
 
-gulp.task('test', ['lint'], function (done) {
+gulp.task('test', ['watch'], function (done) {
   return new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
     autoWatch: true

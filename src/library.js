@@ -1,7 +1,3 @@
-(function () {
-  var Library = {
+export default class {
 
-  };
-
-  window.Library = Library;
-}());
+}
