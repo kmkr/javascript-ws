@@ -141,14 +141,19 @@
 
 # Scope
 
-* global object
+* globalt object
 * wrap i anonym funksjon
 
 # Prototyper
 
 - Chain
 - Objekt i stedet for klasse
+- Arv
 - Object.create
+
+* function Ninja() {}
+* var ninja = new Ninja();
+* typeof, instanceof ninja.constructor === Ninja
 
 *
 ```
