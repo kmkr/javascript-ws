@@ -240,6 +240,7 @@ Bruk gjerne https://jsbin.com/?js,console til å skrive.
 9. Flytt array med bøker til en egen komponent `LibraryStore` (opprett gjerne i samme fil). Bestem API selv, f.eks `.getBook(book)`.
 10. Legg `LibraryStore` i en egen fil `library-store.js` og utnytt "modules" fra ECMAScript 6 til å laste inn den nye fila. Hint:
   `export default` og `import LibraryStore from './library-store.js'`
+11. Konverter `LibraryStore` og `Library` til å være ES6-classes.
 
 #### Start node, gulp og karma
 
