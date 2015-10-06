@@ -23,6 +23,7 @@
 
 - Verktøy
 
+- Oppgaver
 
 
 # JavaScript
@@ -59,8 +60,8 @@
 - Object
 - NaN
 
-* Truthy/Falsy
-* typeof
+* Nevn truthy/Falsy
+* Nevn typeof-operator
 
 
 
@@ -77,7 +78,7 @@
 - !!
 - delete
 
-* Array, fjerner ikke men lager hull
+* Nevn at array fjerner element og lager "hull"
 
 
 
@@ -101,20 +102,25 @@
 - Argumenter
 - Closures
 
-* argumenter - for få/for mange
-* closures: childfunksjon har tilgang på parents scope selv etter parent har returnert:
+* Forklar for få/for mange argumenter
+* Forklar closures: childfunksjon har tilgang på parents scope selv etter parent har returnert:
 
+```
 var bookList = ['The Blind Watchmaker', 'Donald på eventyr', 'Ole Brumm'];
 
 function findBook(bookName) {
   return bookList.filter(function (book) {
-    return book.name === bookName;
+    return book === bookName;
   });
 }
 
-findBook('Ole Brumm');
+console.log(findBook);
+console.log(findBook('Ole Brumm'));
+```
 
+* Funksjoner som first-class objects
 
+```
 function findBook(fun) {
   return bookList.filter(function (bookName) {
     return fun(bookName);
@@ -124,6 +130,7 @@ function findBook(fun) {
 console.log(findBook(function (bookName) {
   return bookName.length > 10;
 }));
+```
 
 * arguments
 
@@ -131,7 +138,7 @@ console.log(findBook(function (bookName) {
 
 # Scope
 
-- Funksjonscope
+- Funksjon-scope
 - Hoisting
 - Blokk-scope (ES6)
 
@@ -212,22 +219,19 @@ console.log(['a'].indexOf('a'));
 
 
 
-# Rammeverk
-
-- AngularJS
-- React / React Native
-
-
-
 # Oppgaver
 
 ## Bibliotek / library
 
 
 1. Lag en JavaScript-komponent `Library`. Du kan velge om du vil lage et objekt direkte eller gå via prototype. Husk `new Library()` dersom du bruker sistnevnte. Komponenten skal inneholde et array med navn på bøker (hardkodet liste er greit).
+
 2. Skriv funksjonen `lendBook(bookName)` som låner ut en bok med navn "bookName". Kast exception dersom boka ikke er tilgjengelig.
+
 3. Skriv funksjonen `hasBook(bookName)` som returnerer true eller false basert på om boka er tilgjengelig. 
+
 4. Bruk en liste med objekter i stedet for en liste med navn på bøker. Hvert objekt er en bok med `name` og `available` properties. Oppdater funksjonene fra punkt 2) og 3) til å fungere, gjerne ved å skrive en hjelpefunksjon `getBook(bookName)`
+
 5. Marker boka som utlånt i kallet til `lendBook(bookName)`.
 
 Bruk gjerne https://jsbin.com/?js,console til å skrive.
@@ -235,11 +239,16 @@ Bruk gjerne https://jsbin.com/?js,console til å skrive.
 ### Ekstra utfordringer
 
 6. Funksjonen `getBook(bookName)` bør ikke være tilgjengelig fra utsiden, gjør den tilgjengelig kun for metodene til "book".
+
 7. Kjør JavaScript lokalt i stedet for å bruke jsbin.com. Se under for oppsett.
+
 8. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
+
 9. Flytt array med bøker til en egen komponent `LibraryStore` (opprett gjerne i samme fil). Bestem API selv, f.eks `.getBook(book)`.
+
 10. Legg `LibraryStore` i en egen fil `library-store.js` og utnytt "modules" fra ECMAScript 6 til å laste inn den nye fila. Hint:
   `export default` og `import LibraryStore from './library-store.js'`
+
 11. Konverter `LibraryStore` og `Library` til å være ES6-classes.
 
 #### Start node, gulp og karma
