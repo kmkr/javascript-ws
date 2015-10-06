@@ -3,6 +3,8 @@
 
 
 
+
+
 # Agenda
 
 - JavaScript? ECMAScript? JScript? 
@@ -19,9 +21,10 @@
 
 - Prototyper
 
-- Struktur
-
 - Verktøy
+
+
+
 
 
 
@@ -105,9 +108,6 @@
 
 # Statements og loops
 
-- for
-- while
-- .forEach()
 - if
 - switch
 - break
@@ -130,18 +130,79 @@
 
 # Funksjoner
 
+- Returnerer alltid
+- First-class-objects
+- Argumenter
+- Closures
+
 * argumenter - for få/for mange
 * closures - childfunksjon har tilgang på parents scope selv etter parent har returnert
 * arguments
 
 # Scope
 
-* global object
+* globalt object
 * wrap i anonym funksjon
 
 # Prototyper
 
-# Kodestruktur
+- Chain
+- Objekt i stedet for klasse
+- Arv
+- Object.create
+
+* function Ninja() {}
+* var ninja = new Ninja();
+* typeof, instanceof ninja.constructor === Ninja
+
+*
+```
+var Person = function (name) {
+  console.log('I persons konstruktør');
+  this.name = name;
+};
+
+Person.prototype.talk = function () {
+  console.log('Hei, jeg heter ' + this.name);
+};
+
+new Person('Ole').talk();
+
+var Employee = function (name, position) {
+  Person.call(this, name);
+  this.position = position;
+};
+
+
+// 1. alt
+Employee.prototype = Person.prototype;
+Employee.prototype.work = function () {
+  console.log('Jeg jobber som ' + this.position);
+};
+// 2. alt
+Employee.prototype = new Person;
+Employee.prototype.work = function () {
+  console.log('Jeg jobber som ' + this.position);
+};
+// 3. alt
+Employee.prototype = Object.create(Person.prototype, {
+    work: {
+      value: function () {
+        console.log('Jeg jobber som ' + this.position);
+      }
+    }
+  });
+
+new Employee('Kristoffer', 'dev').work();
+```
+*
+
+Overskrive native
+```
+console.log(['a'].indexOf('a'));
+Array.prototype.indexOf = function () { console.log('woppsy');};
+console.log(['a'].indexOf('a'));
+```
 
 # Verktøy
 
@@ -161,21 +222,21 @@
 
 ## Bibliotek / library
 
-Lag en JavaScript-komponent `Library` med filnavn `library.js`. Komponenten skal ha et array med bøker og tilby følgende API:
+Lag en JavaScript-komponent `Library`. Komponenten skal ha et array med navn på bøker og tilby følgende API:
 
-1. `lendBook(book)` el. `borrowBook(book)` låner ut en bok med navn 'X'. Kast exception dersom boka ikke er tilgjengelig. Marker boka som utlånt. Returverdi: book
-2. `returnBook(book)` gir tilbake en bok. Marker boka som tilgjengelig.
-3. `search(..)` søker gjennom arrayet med bøker. Returverdi: array med books
-
-Tjenesten kan være et objekt og arrayet med bøker kan være en liste med strings eller med objekter som har properties "id" og "name".
+1. `lendBook(bookName)` låner ut en bok med navn 'X'. Kast exception dersom boka ikke er tilgjengelig.
+2. Bruk et objekt til å ha tilstand på om boka er utlånt. Marker boka som utlånt dersom noen kaller på `lendBook(bookName)`
+3. `returnBook(book)` gir tilbake en bok. Marker boka som tilgjengelig.
+4. `search(name)` søker gjennom arrayet med bøker og returnerer bøker som matcher navnet som er oppgitt, bruk `filter`-funksjonen som Arrays har. Returverdi: array med books
 
 Bruk gjerne https://jsbin.com/?js,console til å skrive.
 
 ### Ekstra utfordringer
 
-4. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
-5. ECMAScript 6 med moduler:
-  Flytt arrayet med bøker til en egen komponent `LibraryStore` i ny fil `library-store.js`, og bruk `import` i `library.js` til å benytte den fila i stedet. Bestem API til `LibraryStore` selv. Bruk `webpack`-branch for å få støtte for ES6-moduler.
+4. Kjør JavaScript lokalt i stedet for å bruke jsbin.com. Se under for oppsett.
+5. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
+6. Flytt array med bøker til en egen komponent `LibraryStore` (opprett gjerne i samme fil). Bestem API selv, f.eks `.getBook(book)`.
+7. Legg `LibraryStore` i en egen fil `library-store.js` og utnytt "modules" fra ECMAScript 6 til å laste inn den nye fila.
 
 #### Start node, gulp og karma
 
