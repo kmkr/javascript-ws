@@ -1,9 +1,14 @@
 module.exports = {
   context: __dirname + '/src',
-  entry: './library.js',
+  entry: {
+    app: [
+      './library.js'
+    ]
+  },
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/assets/'
   },
   devtool: 'source-map',
   module: {
@@ -14,8 +19,5 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  },
-  devServer: {
-    contentBase: './dist',
   }
 }

@@ -1,3 +1,4 @@
+console.log('library');
 export default function () {
   this.bookList = [{
     name: 'The Blind Watchmaker',
