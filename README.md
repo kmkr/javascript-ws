@@ -25,16 +25,19 @@
 
 
 
+# JavaScript
+
+- Dynamisk typet
+
+- Objekt-basert
+
+- Prototype-basert
+
+- Kjører i nettleser, på server, i PDF, Chrome, Safari og Opera-extensions, Apple- og Windows-widgets, Micro-controllere, ...
 
 
 
-
-
-
-
-
-
-
+# Historie
 
 ```
   ECMAScript 1
@@ -43,19 +46,6 @@
  -----|------|------|-------------|-------------------|------------------|-----
     1997   1998   1999    ...   2005   ...   2008   2009   2010   ...   2015
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -74,17 +64,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 # Operators
 
 - =
@@ -97,12 +76,8 @@
 - !
 - !!
 - delete
+
 * Array, fjerner ikke men lager hull
-
-
-
-
-
 
 
 
@@ -119,15 +94,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 # Funksjoner
 
 - Returnerer alltid
@@ -136,13 +102,43 @@
 - Closures
 
 * argumenter - for få/for mange
-* closures - childfunksjon har tilgang på parents scope selv etter parent har returnert
+* closures: childfunksjon har tilgang på parents scope selv etter parent har returnert:
+
+var bookList = ['The Blind Watchmaker', 'Donald på eventyr', 'Ole Brumm'];
+
+function findBook(bookName) {
+  return bookList.filter(function (book) {
+    return book.name === bookName;
+  });
+}
+
+findBook('Ole Brumm');
+
+
+function findBook(fun) {
+  return bookList.filter(function (bookName) {
+    return fun(bookName);
+  });
+}
+
+console.log(findBook(function (bookName) {
+  return bookName.length > 10;
+}));
+
 * arguments
+
+
 
 # Scope
 
+- Funksjonscope
+- Hoisting
+- Blokk-scope (ES6)
+
 * globalt object
 * wrap i anonym funksjon
+
+
 
 # Prototyper
 
@@ -204,6 +200,8 @@ Array.prototype.indexOf = function () { console.log('woppsy');};
 console.log(['a'].indexOf('a'));
 ```
 
+
+
 # Verktøy
 
 - Node
@@ -212,10 +210,13 @@ console.log(['a'].indexOf('a'));
 - ESLint
 - Webpack
 
+
+
 # Rammeverk
 
 - AngularJS
 - React / React Native
+
 
 
 # Oppgaver
