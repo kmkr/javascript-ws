@@ -17,6 +17,5 @@
     "phantomjs": "^1.9.18",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.11.0"
-  },
-  "engine": "node 0.4.1"
+  }
 }
