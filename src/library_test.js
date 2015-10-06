@@ -1,7 +1,12 @@
 import Library from './library';
 
 describe('Library', function () {
-  it('should be available', function () {
-    expect(new Library()).toBeDefined();
+  beforeEach(function () {
+    this.library = new Library();
   });
+
+  it('should be an object', function () {
+    expect(typeof this.library).toBe('object');
+  });
+
 });
