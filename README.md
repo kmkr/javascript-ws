@@ -26,6 +26,7 @@
 - Oppgaver
 
 
+
 # JavaScript
 
 - Dynamisk typet
@@ -38,7 +39,7 @@
 
 
 
-# Historie
+# Historikk
 
 ```
   ECMAScript 1
