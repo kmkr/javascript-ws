@@ -224,35 +224,52 @@ console.log(['a'].indexOf('a'));
 
 ## Bibliotek / library
 
+Bruk gjerne https://jsbin.com/?js,console til å gjøre oppgavene.
 
-1. Lag en JavaScript-komponent `Library`. Du kan velge om du vil lage et objekt direkte eller gå via prototype. Husk `new Library()` dersom du bruker sistnevnte. Komponenten skal inneholde et array med navn på bøker (hardkodet liste er greit).
+### Oppgave 1
 
-2. Skriv funksjonen `lendBook(bookName)` som låner ut en bok med navn "bookName". Kast exception dersom boka ikke er tilgjengelig.
+Lag en JavaScript-komponent `Library`. Du kan velge om du vil lage et objekt direkte eller gå via prototype. Husk `new Library()` dersom du bruker sistnevnte. Komponenten skal inneholde et array med navn på bøker (hardkodet liste er greit).
 
-3. Skriv funksjonen `hasBook(bookName)` som returnerer true eller false basert på om boka er tilgjengelig. 
 
-4. Bruk en liste med objekter i stedet for en liste med navn på bøker. Hvert objekt er en bok med `name` og `available` properties. Oppdater funksjonene fra punkt 2) og 3) til å fungere, gjerne ved å skrive en hjelpefunksjon `getBook(bookName)`
+### Oppgave 2
 
-5. Marker boka som utlånt i kallet til `lendBook(bookName)`.
+Skriv funksjonen `lendBook(bookName)` som låner ut en bok med navn "bookName". Kast exception dersom boka ikke er tilgjengelig.
 
-Bruk gjerne https://jsbin.com/?js,console til å skrive.
+Fikk du ikke til Oppgave 1? Start fra
+http://jsbin.com/fuharosola/edit?js,console
 
-### Ekstra utfordringer
 
-6. Funksjonen `getBook(bookName)` bør ikke være tilgjengelig fra utsiden, gjør den tilgjengelig kun for metodene til "book".
+### Oppgave 3
 
-7. Kjør JavaScript lokalt i stedet for å bruke jsbin.com. Se under for oppsett.
+Skriv funksjonen `hasBook(bookName)` som returnerer true eller false basert på om boka er tilgjengelig. 
 
-8. Skriv tester til tjenesten ved bruk av node-js, gulp og karma
+http://jsbin.com/dahajemicu/edit?js,console
 
-9. Flytt array med bøker til en egen komponent `LibraryStore` (opprett gjerne i samme fil). Bestem API selv, f.eks `.getBook(book)`.
 
-10. Legg `LibraryStore` i en egen fil `library-store.js` og utnytt "modules" fra ECMAScript 6 til å laste inn den nye fila. Hint:
-  `export default` og `import LibraryStore from './library-store.js'`
+### Oppgave 4
 
-11. Konverter `LibraryStore` og `Library` til å være ES6-classes.
+Bruk en liste med objekter i stedet for en liste med navn på bøker. Hvert objekt er en bok med `name` og `available` properties. Oppdater funksjonene fra punkt 2) og 3) til å fungere, gjerne ved å skrive en hjelpefunksjon `getBook(bookName)`
 
-#### Start node, gulp og karma
+http://jsbin.com/hanavuqafe/edit?js,console
+
+
+### Oppgave 5
+
+Marker boka som utlånt i kallet til `lendBook(bookName)`.
+
+http://jsbin.com/dudicupaje/edit?js,console
+
+
+### Oppgave 6
+
+Funksjonen `getBook(bookName)` bør ikke være tilgjengelig fra utsiden, gjør den tilgjengelig kun for metodene til "book".
+
+http://jsbin.com/qevedefita/edit?js,console
+
+
+## Ekstra utfordringer
+
+Kjør JavaScript lokalt i stedet for å bruke jsbin.com. Oppsett:
 
 - Last ned og installer node-js (https://nodejs.org)
 - Kjør `git clone https://github.com/kmkr/javascript-ws` via terminal/cmd
@@ -260,3 +277,28 @@ Bruk gjerne https://jsbin.com/?js,console til å skrive.
 - Kjør `npm install -g gulp`
 - Kjør `npm install`
 - Kjør `gulp test`
+
+Løsningsforslag for oppgave 1 - 6 ligger på
+http://jsbin.com/jidalawaba/edit?js,console
+
+
+### Oppgave 7
+
+Skriv tester til tjenesten ved bruk av node-js, gulp og karma
+
+
+### Oppgave 8
+
+Flytt array med bøker til en egen komponent `LibraryStore` (opprett gjerne i samme fil). Bestem API selv, f.eks `.getBook(book)`.
+
+
+### Oppgave 9
+
+Legg `LibraryStore` i en egen fil `library-store.js` og utnytt "modules" fra ECMAScript 6 til å laste inn den nye fila. Hint:
+  `export default` og `import LibraryStore from './library-store.js'`
+
+
+### Oppgave 10
+
+Konverter `LibraryStore` og `Library` til å være ES6-classes.
+
