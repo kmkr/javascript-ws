@@ -22,7 +22,7 @@ console.log(Library.hasBook('Tom Cruise Biography'));
 
 var Library = function() {
   this.bookList = ['The Blind Watchmaker', 'Ole Brumm', 'JavaScript\'s best parts'];
-}
+};
 
 Library.prototype.hasBook = function(bookName) {
   return this.bookList.indexOf(bookName) !== -1;
