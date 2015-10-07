@@ -26,7 +26,7 @@ var Library = function() {
 
 Library.prototype.hasBook = function(bookName) {
   return this.bookList.indexOf(bookName) !== -1;
-}
+};
 
 Library.prototype.lendBook = function(bookName) {
   if (!this.hasBook(bookName)) {
@@ -34,8 +34,7 @@ Library.prototype.lendBook = function(bookName) {
   }
 
   return this.bookList[this.bookList.indexOf(bookName)];
-
-}
+};
 
 var library = new Library();
 console.log('Har du boka Ole Brumm?');

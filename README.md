@@ -4,6 +4,29 @@
 
 
 
+                        JJJJJJJJJJJ   SSSSSSSSSSSSSSS 
+                        J:::::::::J SS:::::::::::::::S
+                        J:::::::::JS:::::SSSSSS::::::S
+                        JJ:::::::JJS:::::S     SSSSSSS
+                          J:::::J  S:::::S            
+                          J:::::J  S:::::S            
+                          J:::::J   S::::SSSS         
+                          J:::::j    SS::::::SSSSS    
+                          J:::::J      SSS::::::::SS  
+              JJJJJJJ     J:::::J         SSSSSS::::S 
+              J:::::J     J:::::J              S:::::S
+              J::::::J   J::::::J              S:::::S
+              J:::::::JJJ:::::::J  SSSSSSS     S:::::S
+               JJ:::::::::::::JJ   S::::::SSSSSS:::::S
+                 JJ:::::::::JJ     S:::::::::::::::SS 
+                   JJJJJJJJJ        SSSSSSSSSSSSSSS   
+
+
+                           2015-10-07
+                    kris-mikael.krister@webstep.no
+
+
+
 
 # Agenda
 
@@ -30,6 +53,8 @@
 # JavaScript
 
 - Dynamisk typet
+
+- Overføres og tolkes som tekst
 
 - Objekt-basert
 
@@ -61,9 +86,6 @@
 - Object
 - NaN
 
-* Nevn truthy/Falsy
-* Nevn typeof-operator
-
 
 
 # Operators
@@ -78,8 +100,6 @@
 - !
 - !!
 - delete
-
-* Nevn at array fjerner element og lager "hull"
 
 
 
@@ -103,38 +123,6 @@
 - Argumenter
 - Closures
 
-* Forklar for få/for mange argumenter
-* Forklar closures: childfunksjon har tilgang på parents scope selv etter parent har returnert:
-
-```
-var bookList = ['The Blind Watchmaker', 'Donald på eventyr', 'Ole Brumm'];
-
-function findBook(bookName) {
-  return bookList.filter(function (book) {
-    return book === bookName;
-  });
-}
-
-console.log(findBook);
-console.log(findBook('Ole Brumm'));
-```
-
-* Funksjoner som first-class objects
-
-```
-function findBook(fun) {
-  return bookList.filter(function (bookName) {
-    return fun(bookName);
-  });
-}
-
-console.log(findBook(function (bookName) {
-  return bookName.length > 10;
-}));
-```
-
-* arguments
-
 
 
 # Scope
@@ -142,9 +130,6 @@ console.log(findBook(function (bookName) {
 - Funksjon-scope
 - Hoisting
 - Blokk-scope (ES6)
-
-* globalt object
-* wrap i anonym funksjon
 
 
 
@@ -155,57 +140,9 @@ console.log(findBook(function (bookName) {
 - Arv
 - Object.create
 
-* function Ninja() {}
-* var ninja = new Ninja();
-* typeof, instanceof ninja.constructor === Ninja
-
-*
 ```
-var Person = function (name) {
-  console.log('I persons konstruktør');
-  this.name = name;
-};
-
-Person.prototype.talk = function () {
-  console.log('Hei, jeg heter ' + this.name);
-};
-
-new Person('Ole').talk();
-
-var Employee = function (name, position) {
-  Person.call(this, name);
-  this.position = position;
-};
-
-
-// 1. alt
-Employee.prototype = Person.prototype;
-Employee.prototype.work = function () {
-  console.log('Jeg jobber som ' + this.position);
-};
-// 2. alt
-Employee.prototype = new Person;
-Employee.prototype.work = function () {
-  console.log('Jeg jobber som ' + this.position);
-};
-// 3. alt
-Employee.prototype = Object.create(Person.prototype, {
-    work: {
-      value: function () {
-        console.log('Jeg jobber som ' + this.position);
-      }
-    }
-  });
-
-new Employee('Kristoffer', 'dev').work();
-```
-*
-
-Overskrive native
-```
-console.log(['a'].indexOf('a'));
-Array.prototype.indexOf = function () { console.log('woppsy');};
-console.log(['a'].indexOf('a'));
+function Ninja() {}
+var ninja = new Ninja();
 ```
 
 
