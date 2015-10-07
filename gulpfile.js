@@ -5,6 +5,16 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var KarmaServer = require('karma').Server;
 
+gulp.task('lint', function () {
+  return gulp.src('./src/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format());
+});
+
+gulp.task('continuous-lint', function () {
+  gulp.watch('./src/**/*.js', ['lint']);
+});
+
 gulp.task('test', ['continuous-lint'], function (done) {
   return new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
@@ -12,16 +22,6 @@ gulp.task('test', ['continuous-lint'], function (done) {
   }, function () {
     done();
   }).start();
-});
-
-gulp.task('continuous-lint', function () {
-  gulp.watch('./src/**/*.js', ['lint']);
-});
-
-gulp.task('lint', function () {
-  return gulp.src('./src/**/*.js')
-    .pipe(eslint())
-    .pipe(eslint.format());
 });
 
 gulp.task('webpack', ['lint'], function(callback) {
