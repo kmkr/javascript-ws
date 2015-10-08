@@ -180,28 +180,28 @@ http://jsbin.com/fuharosola/edit?js,console
 
 Skriv funksjonen `hasBook(bookName)` som returnerer true eller false basert på om boka er tilgjengelig. 
 
-http://jsbin.com/dahajemicu/edit?js,console
+Fikk du ikke til Oppgave 2? Start fra http://jsbin.com/dahajemicu/edit?js,console
 
 
 ### Oppgave 4
 
 Bruk en liste med objekter i stedet for en liste med navn på bøker. Hvert objekt er en bok med `name` og `available` properties. Oppdater funksjonene fra punkt 2) og 3) til å fungere, gjerne ved å skrive en hjelpefunksjon `getBook(bookName)`
 
-http://jsbin.com/hanavuqafe/edit?js,console
+Fikk du ikke til Oppgave 3? Start fra http://jsbin.com/hanavuqafe/edit?js,console
 
 
 ### Oppgave 5
 
 Marker boka som utlånt i kallet til `lendBook(bookName)`.
 
-http://jsbin.com/dudicupaje/edit?js,console
+Fikk du ikke til Oppgave 4? Start fra http://jsbin.com/dudicupaje/edit?js,console
 
 
 ### Oppgave 6
 
 Funksjonen `getBook(bookName)` bør ikke være tilgjengelig fra utsiden, gjør den tilgjengelig kun for metodene til "book".
 
-http://jsbin.com/qevedefita/edit?js,console
+Fikk du ikke til Oppgave 5? Start fra http://jsbin.com/qevedefita/edit?js,console
 
 
 ## Ekstra utfordringer
@@ -215,8 +215,7 @@ Kjør JavaScript lokalt i stedet for å bruke jsbin.com. Oppsett:
 - Kjør `npm install`
 - Kjør `gulp test`
 
-Løsningsforslag for oppgave 1 - 6 ligger på
-http://jsbin.com/jidalawaba/edit?js,console
+Bruk gjerne utgangspunkt i koden du lagde i oppgave 6. Dersom du ønsker å starte direkte på oppgave 7 så ligger løsningsforslag for oppgave 6 på http://jsbin.com/jidalawaba/edit?js,console
 
 
 ### Oppgave 7
